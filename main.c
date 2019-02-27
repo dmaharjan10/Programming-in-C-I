@@ -1,20 +1,34 @@
-/* JTSK-320111
-Assignment 1.5.c
-Drishti Maharjan
-d.maharjan@jacobs-university.de
-*/#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h>
 
 int main()
 {
-    int x=2138;
-    printf("x=     %d\n",x);
-    float y=-52.358925;
-    printf("y=  %.5f\n",y);
-    char z='G';
-    printf("z=%c\n",z);
-    double u=61.295339687;
-    printf("u=%.7lf\n",u);
+    double a,b;
+    scanf("%lf",&a);
+    getchar();
+    scanf("%lf",&b);
+    getchar();
+    printf("sum of doubles=%lf\n",a + b);
+    printf("difference of doubles=%lf\n",a - b);
+    printf ("square=%lf\n",a*a);
+
+    int x,y;
+    scanf("%d",&x);
+    getchar();
+    scanf("%d",&y);
+    getchar();
+    printf("sum of integers=%d\n",x+y);
+    printf("product of integers=%d\n",x*y);
+
+    char w,e;
+    scanf("%c",&w);
+    getchar();
+    scanf("%c",&e);
+    getchar();
+    printf ("sum of chars=%d\n",w+e );
+    printf ("product of chars=%d\n",w*e);
+    printf("sum of chars=%c\n",w+e);
+    printf("product of chars=%c\n",w*e);
+
 
     return 0;
 }
