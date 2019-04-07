@@ -12,7 +12,7 @@ int main()
       printf("i is %d\n", i);
       i--;
       }
-    printf("That’s it.\n");
+    printf("Thatâ€™s it.\n");
 
     return 0;
 }
