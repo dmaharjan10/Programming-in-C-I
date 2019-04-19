@@ -1,30 +1,37 @@
-/* JTSK-320111
-4.2.c
+/*JTSK-320111
+4.3.c
 Drishti Maharjan
 d.maharjan@jacobs-university.de
+*/
+
+/*
+@brief to_pounds This function converts the units of mass into pounds.
+@param kg The parameter represents mass in unit kilograms
+@param g The parameter represents mass in unit grams
+@return pou It returns the value of mass converted in pounds.
 */
 #include <stdio.h>
 #include <stdlib.h>
 
-/* @brief convert This is a function that converts cm into km
-@param cm the value in cm
-@return the value that has been converted into km
-*/
-float convert (int cm);
+float to_pounds(int kg, int g);
 
-int main(){
-    int x;
-    char line[40];
-       fgets(line,sizeof(line),stdin);
-       sscanf(line,"%d",&x);
-       printf("Result of conversion: %f\n", convert(x));
-       return 0;
+int main()
+{
+    char line[20];
+    int a,b;
+    fgets(line, sizeof(line), stdin);
+    sscanf(line,"%d",&a);
+    fgets(line, sizeof(line), stdin);
+    sscanf (line, "%d", &b);
 
+    printf("Result of conversion: %f\n",to_pounds(a,b));
+
+    return 0;
 }
 
-float convert(int cm){
-    float km;
-    km=cm*  0.00001;
-    return km;
+float to_pounds(int kg, int g)
+{
+    float pou;
+    pou = kg*2.200000 + g*0.002200;
+    return pou;
 }
-
