@@ -1,40 +1,85 @@
-/*JTSK 320111
-4.4.c
+/* JTSK-320111
+4.5.c
 Drishti Maharjan
-d.maharjan@jacobs-university.de */
+d.maharjan@jacobs-university.de
+*/
+/* @brief: sum This function computes the sum of the given float numbers
+@param sum1 The value of current sum of the numbers entered till date
+@param x The float number entered by user
+@return total_sum This returns the total sum of the numbers so far
+
+@brief average This function computes the average of numbers entered
+@param i The variable used for counting number of iterations
+@return avg This returns the average of the numbers.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
-
-void print_form(int n, int m, char c); // prototyping //
+float sum(float sum1, float x);
+float average(float sum1, int i);
 
 int main()
 {
-    int n,m;
-    char c;
-    scanf("%d", &n);
-    scanf("%d", &m);
-    scanf(" %c", &c); //using scanf to eat the white space while reading character//
+    /* not required to read:
+     int count;
+    printf("Enter the number of floats you want to use (not more than 10)\n");
+    scanf("%d", &count); */
 
-    print_form(n,m,c);
+
+    float x;
+    int i=0;
+    float sum1=0;
+
+   /* not required by question:
+   if (count>10)
+    {
+        printf("You can't enter more than 10 floats. Enter a valid number.\n");
+        scanf("%d", &count);
+
+    }
+
+    printf ("Enter %d floats:\n", count); */
+
+
+    do
+    {
+        scanf("%f", &x);
+        if (x==-99.0)
+        {
+            break;
+
+        }
+        sum1=sum(sum1,x);
+        i++;
+    }
+    while (i< 10);
+
+
+    printf ("Sum is %f\n", sum1);
+    printf ("Average is %f\n", average(sum1, i));
+
 
     return 0;
 }
 
-void print_form(int n, int m, char c)
+float sum(float sum, float x)
 {
-    int i=0,k, j=0;
-
-    for (i=0; i<n; i++) // loop to print n number of lines in the pattern//
+    float total_sum;
+    if (x==-99.0)
     {
-
-        for (k=1; k<= (m+j) ; k++) //loop to print the character m+j times in each line //
-        {
-            printf("%c", c);
-        }
-        printf ("\n");  //start a new line//
-        j++;
-
+        total_sum = sum + x +99.0;
+        return total_sum;
     }
+    else
+        total_sum= sum + x;
+    return total_sum;
+}
+
+float average(float sum1, int i)
+{
+    float avg=0;
+    avg= sum1/ i;
+    return avg;
 }
 
 
