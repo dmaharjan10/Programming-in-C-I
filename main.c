@@ -1,32 +1,31 @@
-/* JTSK-320111
+/* JTSK-32011
 Drishti Maharjan
 d.maharjan@jacobs-university.de */
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
 int main()
 {
-    float x, lower, upper, stepsize;
+    char line[150];
+    char str[50];
+    int i;
+    fgets(line, sizeof(line),stdin);
+    sscanf(line, "%[^\n]", str); // this ensures the string accepts input with spaces
 
-
-    const double pi= 3.14159265359;  //value of pi//
-    scanf("%f", &lower);
-    scanf("%f", &upper);
-    scanf("%f", &stepsize);
-
-
-    for (x = lower; (x >= lower) && (x <= upper); x = x + stepsize) //setting the number of rows//
+    for (i = 0; i < strlen(str); i++) //loop works until the end of the string
     {
+        if (i % 2 == 0) //if the position of string is at odd positions, it prints without space
+        {
+            printf("%c\n", str[i]);
+        }
+        else  //if position of string is at even positions, it prints with space
+        {
+            printf(" %c\n", str[i]);
+        }
 
-
-
-        printf("%.6f ", x); //column 1: x
-
-        printf("%.6f ", x * x *pi); //column 2: area
-
-        printf("%.6f\n", 2 * pi * x); //column 3: perimeter
     }
-
-
     return 0;
 }
